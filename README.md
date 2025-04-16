@@ -112,4 +112,4 @@ Python hic_allelic_counts.py [maternal uniquely mapped counts] [paternal uniquel
 
 	
 
-This pipeline was developed with [Dr. Yang Xie](https://github.com/Xieeeee/AlleliC/). Contact us at Ming Hu (hum@ccf.org) or Lindsay Lee (leeh7@ccf.org).
+This pipeline was developed with [Dr. Yang Xie](https://github.com/Xieeeee/AlleliC/). If there's any question about this pipeline, contact us at Ming Hu (hum@ccf.org) or Lindsay Lee (leeh7@ccf.org).

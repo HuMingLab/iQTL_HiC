@@ -6,10 +6,10 @@ phase2=$2
 s=$3  ### read1 and read2: ${s}_R1.fastq.gz, ${s}_R2.fastq.gz
 F1=$4
 F2=$5
-chrom_size=/home/leeh7/iQTL/fasta/chr_size
-ref=/home/leeh7/iQTL/fasta/bwa_renamed
+chrom_size=
+ref=
 #ref=/home/leeh7/iQTL/fasta/reg_bwa/${phase1}x${phase2}_genome.fa
-out_dir=/home/leeh7/iQTL/Yang_HiC/AlleliC/${phase1}x${phase2}_${s}
+out_dir=/output_dir/${phase1}x${phase2}_${s}
 
 
 bwa-mem2 mem -SP5M -T0 -t16 ${ref}/${phase1}x${phase2}_genome.fa ${F1} ${F2} | samtools view -bhS - > ${out_dir}/${s}.bam

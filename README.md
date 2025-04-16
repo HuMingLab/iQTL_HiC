@@ -13,6 +13,12 @@
 	* Numpy v1.19.5 
 	* Pandas v1.1.5
 
+### Required inputs
+- fasta file (indexed with bwa-mem2 index)
+- chromosome size file
+- the fastq file should be named CC1xCC2_mousename_R1_*.fastq.gz
+- Be sure to edit and add locations indicated by the main shellscript (run_hic.sh)
+
 ### Running the pipeline
 This pipeline can be simply run by 
 ```

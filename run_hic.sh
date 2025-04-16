@@ -41,5 +41,5 @@ pairtools parse -c ${chrom_size}/${phase2}_chr_sizes.txt --drop-sam ${out_dir}/$
 
 ## getting the total counts
 
-#python hic_allelic_counts.py ${out_dir}/all_${s}.phase_allele1_counts.txt ${out_dir}/all_${s}.phase_allele2_counts.txt ${out_dir}/all_${phase1}_${s}_counts.txt ${out_dir}/all_${phase2}_${s}_counts.txt /home/leeh7/iQTL/liftover/HiC_loops/${phase1}_liftover_HiC_loops.txt /home/leeh7/iQTL/liftover/HiC_loops/${phase2}_liftover_HiC_loops.txt /home/leeh7/iQTL/liftover/111323_345582_loops_from_59mice.bedpe ${out_dir}/${phase1}x${phase2}_${s}_allelic_total_counts.txt
+python hic_allelic_counts.py ${out_dir}/all_${s}.phase_allele1_counts.txt ${out_dir}/all_${s}.phase_allele2_counts.txt ${out_dir}/all_${phase1}_${s}_counts.txt ${out_dir}/all_${phase2}_${s}_counts.txt /home/leeh7/iQTL/liftover/HiC_loops/${phase1}_liftover_HiC_loops.txt /home/leeh7/iQTL/liftover/HiC_loops/${phase2}_liftover_HiC_loops.txt /home/leeh7/iQTL/liftover/111323_345582_loops_from_59mice.bedpe ${out_dir}/${phase1}x${phase2}_${s}_allelic_total_counts.txt
 

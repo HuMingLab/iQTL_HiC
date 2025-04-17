@@ -18,7 +18,7 @@ bwa-mem2 mem -SP5M -T0 -t16 ${ref}/${phase1}x${phase2}_genome.fa ${F1} ${F2} | s
 
 
 ## converting .pairs to .hic in order to get counts using juicer dump
-./convert_hic.sh $phase1 $phase2 $s
+./convert_hic.sh $phase1 $phase2 $s $out_dir
 
 ## grabbing the IDs from unmapped reads and get the unmapped reads from the fastq files
 gunzip -k ${out_dir}/${s}.phase_mix.dedup.pairs.gz
@@ -36,7 +36,7 @@ pairtools parse -c ${chrom_size}/${phase1}_chr_sizes.txt --drop-sam ${out_dir}/$
 pairtools parse -c ${chrom_size}/${phase2}_chr_sizes.txt --drop-sam ${out_dir}/${phase2}_${s}.bam -o ${out_dir}/${phase2}_${s}.pairs 
 
 ## converting .pairs to .hic in order to get counts using juicer dump
-./multi_convert_hic.sh $phase1 $phase2 $s
+./multi_convert_hic.sh $phase1 $phase2 $s $out_dir
 
 
 ## getting the total counts

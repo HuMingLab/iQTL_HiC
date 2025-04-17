@@ -18,7 +18,7 @@ grep -v '#' test${CC}.sorted.pairs | awk '{if ($2 > $4){print $6"\t"$2"\t"$3"\t"
 sed 's/+/0/g' tmp.pairs > test.pairs;
 sed -i 's/-/1/g' test.pairs;
 sort -k2,2d -k6,6d test.pairs > tmp.pairs;
-java -Xmx100g -jar /home/leeh7/software/juicer_tools_1.22.01.jar pre -r 10000 tmp.pairs ${CC}_${name}.hic /home/leeh7/iQTL/fasta/chr_size/${CC}_chr_sizes.txt;
+java -Xmx100g -jar juicer_tools_1.22.01.jar pre -r 10000 tmp.pairs ${CC}_${name}.hic /home/leeh7/iQTL/fasta/chr_size/${CC}_chr_sizes.txt;
 rm -rf test${CC}.sorted.pairs test.pairs tmp.pairs;
 
 

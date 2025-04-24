@@ -18,7 +18,7 @@ bwa-mem2 mem -SP5M -T0 -t16 ${ref}/${CC1}x${CC2}_genome.fa ${F1} ${F2} | samtool
 
 
 ## converting .pairs to .hic in order to get counts using juicer dump
-./convert_hic.sh $CC1 $CC2 $s
+./convert_hic.sh $CC1 $CC2 $s $out_dir
 
 ## grabbing the IDs from unmapped reads and get the unmapped reads from the fastq files
 
@@ -46,7 +46,7 @@ pairtools parse -c ${chrom_size}/${CC1}_chr_sizes.txt --drop-sam ${out_dir}/${CC
 pairtools parse -c ${chrom_size}/${CC2}_chr_sizes.txt --drop-sam ${out_dir}/${CC2}_${s}.bam -o ${out_dir}/${CC2}_${s}.pairs 
 
 ## converting .pairs to .hic in order to get counts using juicer dump
-./split_multi_convert_hic.sh $CC1 $CC2 $s
+./split_multi_convert_hic.sh $CC1 $CC2 $s $out_dir
 
 
 ## getting the total counts

@@ -4,15 +4,15 @@
 CC1=$1
 CC2=$2
 s=$3  ### read1 and read2: ${s}_R1.fastq.gz, ${s}_R2.fastq.gz
-F1=$4
-F2=$5
+fastq1=$4
+fastq2=$5
 chrom_size=
 ref=
-#ref=/home/leeh7/iQTL/fasta/reg_bwa/${CC1}x${CC2}_genome.fa
+#ref=${CC1}x${CC2}_genome.fa
 out_dir=/output_dir/${CC1}x${CC2}_${s}
 
 
-bwa-mem2 mem -SP5M -T0 -t16 ${ref}/${CC1}x${CC2}_genome.fa ${F1} ${F2} | samtools view -bhS - > ${out_dir}/${s}.bam
+bwa-mem2 mem -SP5M -T0 -t16 ${ref}/${CC1}x${CC2}_genome.fa ${fastq1} ${fastq2} | samtools view -bhS - > ${out_dir}/${s}.bam
 ##bwa mem -SP -t 16 ${ref} /proj/HuMingLab/60_mice_data/shallow_seq/MH213/${s}_240104_1.fastq.gz /proj/HuMingLab/60_mice_data/shallow_seq/MH213/${s}_240104_2.fastq.gz | samtools view -bhS - > ${out_dir}/${s}.bam
 ./allelic_hic_mapping_v3.sh -i ${out_dir}/${s}.bam -o ${out_dir} -c ${chrom_size}/${CC1}x${CC2}_chr_sizes.txt -p1 ${CC1} -p2 ${CC2}
 
